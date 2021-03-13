@@ -1,11 +1,15 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function transform(array) {
-  if (!Array.isArray(array)) throw new Error();
-  if (!array.length) return [];
+  if (!Array.isArray(array)) {
+    throw new Error();
+  }
+  if (!array.length) {
+    return [];
+  }
   let arr = array.slice();
 
-  let res = []
+  let res = [];
   for (let i = 0; i < arr.length; i++) {
     switch(arr[i]) {
       case "--double-next":
